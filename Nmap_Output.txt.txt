@@ -1,0 +1,81 @@
+Future Interns – Cyber Security Internship 2026
+
+Task 1: Vulnerability Assessment Report
+
+Prepared By: Palagani Keerthi priya
+Date: 06 July 2026
+
+Target Website:
+http://scanme.nmap.org
+
+Objective:
+To perform an ethical, read-only vulnerability assessment on a publicly accessible website using Nmap for network reconnaissance.
+
+=====================================================================
+NMAP SCAN 1 – BASIC PORT SCAN
+=====================================================================
+
+Command Used:
+nmap scanme.nmap.org
+
+Output:
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-07-05 11:58 +0530
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.27s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 996 closed tcp ports (reset)
+
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+9929/tcp  open  nping-echo
+31337/tcp open  Elite
+
+Nmap done: 1 IP address (1 host up) scanned in 16.14 seconds
+
+Observations:
+• Host is reachable.
+• Four TCP ports are open.
+• SSH service is available on port 22.
+• HTTP service is available on port 80.
+• Nping Echo service is available on port 9929.
+• Port 31337 is open.
+
+=====================================================================
+NMAP SCAN 2 – SERVICE VERSION DETECTION
+=====================================================================
+
+Command Used:
+nmap -sV scanme.nmap.org
+
+Output:
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-07-05 11:59 +0530
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.27s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 996 closed tcp ports (reset)
+
+PORT      STATE SERVICE    VERSION
+22/tcp    open  ssh        OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+80/tcp    open  http       Apache httpd 2.4.7 ((Ubuntu))
+9929/tcp  open  nping-echo Nping echo
+31337/tcp open  tcpwrapped
+
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 30.32 seconds
+
+Observations:
+• Service versions were successfully identified.
+• The target is running Linux.
+• OpenSSH and Apache versions were detected.
+• This information helps in identifying potential security risks and outdated software versions.
+
+=====================================================================
+DISCLAIMER
+=====================================================================
+
+This assessment was performed only against the official Nmap testing server (scanme.nmap.org). The scan was conducted using passive and non-destructive techniques for educational purposes as part of the Future Interns Cyber Security Internship. No exploitation, brute-force attacks, or unauthorized activities were performed.
